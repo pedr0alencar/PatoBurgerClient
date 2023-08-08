@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pato_burguer_client/homeScreen.dart';
+import 'package:pato_burguer_client/navBar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     //Color minhaCor = const Color(0xFFFF9B0D);
     return const MaterialApp(
       title: "PatoBurguer",
-      home: HomeScreen(),
+      home: NavBar(),
     );
   }
 }
