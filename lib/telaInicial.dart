@@ -95,11 +95,14 @@ class TelaInicial extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Align(
-                            alignment: Alignment(-0.1, 0.5),
-                            child: Image.asset(
-                                'lib/recursos/images/pato-bacon_solo.png'))
                       ],
+                    )),
+                Align(
+                    alignment: Alignment(0.44, -0.42),
+                    child: Image.asset(
+                      'lib/recursos/images/pato-bacon_solo.png',
+                      height: 192,
+                      width: 180,
                     ))
               ],
             ),
