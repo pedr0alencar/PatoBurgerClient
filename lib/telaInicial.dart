@@ -54,19 +54,51 @@ class TelaInicial extends StatelessWidget {
                             children: [
                               Align(
                                 alignment: Alignment(-0.5, -0.68),
-                                child: Text('X-Lombo de Pato'),
+                                child: Text(
+                                  'X-Lombo de Pato',
+                                  style: TextStyle(
+                                      color: Constantes.corNomeLanche,
+                                      fontWeight: FontWeight.w700),
+                                ),
                               ),
                               Align(
                                 alignment: Alignment(-0.74, -0.1),
-                                child: Text('20%'),
+                                child: Text(
+                                  '20%',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16),
+                                ),
                               ),
                               Align(
-                                alignment: Alignment(-0.14, -0.1),
+                                alignment: Alignment(-0.058, -0.11),
                                 child: Text('de Desconto'),
-                              )
+                              ),
+                              Align(
+                                alignment: Alignment(-0.74, 0.4),
+                                child: Text(
+                                  'R\$',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                              Align(
+                                  alignment: Alignment(-0.48, 0.54),
+                                  child: Text(
+                                    '0,00',
+                                    style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.w700,
+                                        color: Color(0xFF434343)),
+                                  ))
                             ],
                           ),
-                        )
+                        ),
+                        Align(
+                            alignment: Alignment(-0.1, 0.5),
+                            child: Image.asset(
+                                'lib/recursos/images/pato-bacon_solo.png'))
                       ],
                     ))
               ],
