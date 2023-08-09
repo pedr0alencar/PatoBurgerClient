@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'main.dart';
 import 'modelo/item.dart';
 import 'lanche.dart';
-import 'lancheExibicao.dart';
+import 'VerLanche.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,11 +19,11 @@ class TelaCardapio extends StatefulWidget {
 }
 
 class _TelaCardapioState extends State<TelaCardapio> {
-  void _navegarParaEditar(/*BuildContext context, ItemCardapio item*/) {
+  void _navegarParaVisualizar(BuildContext context, ItemCardapio item) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ViewLanche(/*item: item*/),
+        builder: (context) => VerLanche(item: item),
       ),
     );
   }
@@ -191,7 +191,7 @@ class _TelaCardapioState extends State<TelaCardapio> {
                   // Verifica se o índice é válido antes de retornar o LancheCard
                   return LancheCard(
                     _itens[index],
-                    onTap: () => _navegarParaEditar(/*context, _itens[index]*/),
+                    onTap: () => _navegarParaVisualizar(context, _itens[index]),
                   );
                 } else {
                   return null;

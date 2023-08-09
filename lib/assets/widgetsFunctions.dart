@@ -155,7 +155,6 @@ Widget butaoAdm(
   );
 }
 
-
 /*Widget formSenha {
   bool _showpassord = false;
   return TextFormField(
@@ -183,3 +182,13 @@ Widget butaoAdm(
                             obscureText: _showpassord == false ? true: false,
                         );
 }*/
+
+Widget campoEditarItem(BuildContext context, controller, String texto) {
+  return Container(
+    width: MediaQuery.of(context).size.width,
+    child: Padding(
+      padding: EdgeInsets.only(top: 0, left: 1, right: 1),
+      child: Text(texto),
+    ),
+  );
+}

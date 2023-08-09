@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "PatoBurguer",
         //home: TelaInicial(),
-        //home: TelaCardapio()
-        home: VerContato());
+        home: TelaCardapio()
+        //home: VerContato()
+        );
   }
 }
