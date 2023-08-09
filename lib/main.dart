@@ -1,26 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:pato_burguer_client/homeScreen.dart';
-import 'package:pato_burguer_client/navBar.dart';
+import 'package:pato_burguer_client/telaInicial.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  /* await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );*/
-
-  runApp(const MyApp());
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp() : super();
 
   @override
   Widget build(BuildContext context) {
     //Color minhaCor = const Color(0xFFFF9B0D);
-    return const MaterialApp(
+    return MaterialApp(
       title: "PatoBurguer",
-      home: NavBar(),
+      home: TelaInicial(),
     );
   }
 }
