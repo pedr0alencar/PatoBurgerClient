@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "802048372343",
+    "firebase_url": "https://pato-burguer-73412-default-rtdb.firebaseio.com",
+    "project_id": "pato-burguer-73412",
+    "storage_bucket": "pato-burguer-73412.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802048372343:android:73d2628291bc1bd24a2072",
+        "android_client_info": {
+          "package_name": "com.example.pato_burguer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802048372343-nratkfel3gsl4g52no357nrut18q98lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6Ji2xnHvnab3LkmA5TMLj8U7darY6WSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802048372343-nratkfel3gsl4g52no357nrut18q98lp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "802048372343-8re89cj06m44ehssnnr6j3gkatg6l88h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.patoBurguer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802048372343:android:cb28fb05a5d183fb4a2072",
+        "android_client_info": {
+          "package_name": "com.example.pato_burguer_client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802048372343-nratkfel3gsl4g52no357nrut18q98lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6Ji2xnHvnab3LkmA5TMLj8U7darY6WSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802048372343-nratkfel3gsl4g52no357nrut18q98lp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "802048372343-8re89cj06m44ehssnnr6j3gkatg6l88h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.patoBurguer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
