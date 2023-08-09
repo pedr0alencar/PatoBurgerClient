@@ -19,6 +19,15 @@ class TelaCardapio extends StatefulWidget {
 }
 
 class _TelaCardapioState extends State<TelaCardapio> {
+  void _navegarParaEditar(/*BuildContext context, ItemCardapio item*/) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ViewLanche(/*item: item*/),
+      ),
+    );
+  }
+
   List<ItemCardapio> _itens = [];
 
   @override
@@ -182,7 +191,7 @@ class _TelaCardapioState extends State<TelaCardapio> {
                   // Verifica se o índice é válido antes de retornar o LancheCard
                   return LancheCard(
                     _itens[index],
-                    onTap: () => ViewLanche(/*context, _itens[index]*/),
+                    onTap: () => _navegarParaEditar(/*context, _itens[index]*/),
                   );
                 } else {
                   return null;

@@ -25,12 +25,6 @@ Widget textoSimples(String texto, double tamanhoFonte) {
 
 Widget CamposEditarHorario(String textoDia, String textoHorario) {
   return Container(
-    decoration: BoxDecoration(
-        border: Border.all(
-          color: Constantes.CorBorda,
-          width: 1.0,
-        ),
-        borderRadius: BorderRadius.circular(5)),
     height: 34,
     width: 370,
     child: Stack(
@@ -41,10 +35,10 @@ Widget CamposEditarHorario(String textoDia, String textoHorario) {
           alignment: Alignment(0.60, 0),
           child: textoSimples(textoHorario, 12),
         ),
-        Align(
+        /*Align(
           alignment: Alignment(0.99, 0),
           child: Image.asset('lib/assets/recursos/editar.png'),
-        )
+        )*/
       ],
     ),
   );
@@ -82,13 +76,6 @@ Widget redesSociais(String icon, String texto) {
                 child: Container(
                   height: 31,
                   width: 210,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Constantes.CorBorda,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
                   child: Stack(
                     children: [
                       Align(
@@ -102,10 +89,10 @@ Widget redesSociais(String icon, String texto) {
                         ),
                         alignment: Alignment(-0.82, 0.0),
                       ),
-                      Align(
+                      /*Align(
                         alignment: Alignment(1, 1),
                         child: Image.asset('lib/assets/recursos/editar.png'),
-                      ),
+                      ),*/
                     ],
                   ),
                 ),

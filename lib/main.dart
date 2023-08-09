@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pato_burguer_client/VerContato.dart';
 import 'package:pato_burguer_client/telaCardapio.dart';
 import 'package:pato_burguer_client/telaInicial.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "PatoBurguer",
         //home: TelaInicial(),
-        home: TelaCardapio());
+        //home: TelaCardapio()
+        home: VerContato());
   }
 }
