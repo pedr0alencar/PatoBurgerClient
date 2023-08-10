@@ -19,6 +19,15 @@ class TelaCardapio extends StatefulWidget {
 }
 
 class _TelaCardapioState extends State<TelaCardapio> {
+  List<ItemCardapio> _itens = [];
+  List<ItemCardapio> _itensCategoriaSelecionada = [];
+  List<ItemCardapio> _itensCarne = [];
+  List<ItemCardapio> _itensFrango = [];
+  List<ItemCardapio> _itensBebidas = [];
+  List<ItemCardapio> _itensCombos = [];
+  List<ItemCardapio> _itensPm = [];
+  String opcao = 'carne';
+
   void _navegarParaVisualizar(BuildContext context, ItemCardapio item) {
     Navigator.push(
       context,
@@ -28,12 +37,36 @@ class _TelaCardapioState extends State<TelaCardapio> {
     );
   }
 
-  List<ItemCardapio> _itens = [];
+  //List<ItemCardapio> _itens = [];
 
   @override
   void initState() {
     super.initState();
     _carregaDoFirebase();
+    _atualizarItensCategoriaSelecionada(opcao);
+  }
+
+  void SeparaLista(
+    List<ItemCardapio> lista,
+    List<ItemCardapio> listaF,
+    List<ItemCardapio> listaC,
+    List<ItemCardapio> listaB,
+    List<ItemCardapio> listaCo,
+    List<ItemCardapio> listaPm,
+  ) {
+    for (int i = 0; i < lista.length; i++) {
+      if (lista[i].tipo == "carne") {
+        listaC.add(lista[i]);
+      } else if (lista[i].tipo == "frango") {
+        listaF.add(lista[i]);
+      } else if (lista[i].tipo == "bebida") {
+        listaB.add(lista[i]);
+      } else if (lista[i].tipo == 'combo') {
+        listaCo.add(lista[i]);
+      } else if (lista[i].tipo == 'promocao') {
+        listaPm.add(lista[i]);
+      }
+    }
   }
 
   void _carregaDoFirebase() async {
@@ -66,10 +99,31 @@ class _TelaCardapioState extends State<TelaCardapio> {
 
       setState(() {
         _itens = itens;
+        SeparaLista(itens, _itensFrango, _itensCarne, _itensBebidas,
+            _itensCombos, _itensPm);
       });
     } catch (error) {
       print("Erro ao carregar dados do Firebase: $error");
     }
+  }
+
+  void _atualizarItensCategoriaSelecionada(String categoria) {
+    setState(() {
+      if (categoria == 'carne') {
+        _itensCategoriaSelecionada = _itensCarne;
+      } else if (categoria == 'frango') {
+        _itensCategoriaSelecionada = _itensFrango;
+      } else if (categoria == 'bebida') {
+        _itensCategoriaSelecionada = _itensBebidas;
+      } else if (categoria == 'combo') {
+        _itensCategoriaSelecionada = _itensCombos;
+      } else if (categoria == 'promocao') {
+        _itensCategoriaSelecionada = _itensPm;
+      } else {
+        _itensCategoriaSelecionada =
+            _itens; // Caso nenhuma categoria seja selecionada
+      }
+    });
   }
 
   Widget build(BuildContext context) {
@@ -104,7 +158,9 @@ class _TelaCardapioState extends State<TelaCardapio> {
                     child: Row(
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _atualizarItensCategoriaSelecionada('promocao');
+                          },
                           child: Text(
                             'PROMOÇÕES',
                             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -117,7 +173,9 @@ class _TelaCardapioState extends State<TelaCardapio> {
                           width: 10,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _atualizarItensCategoriaSelecionada('carne');
+                          },
                           child: Text(
                             'CARNE',
                             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -130,7 +188,9 @@ class _TelaCardapioState extends State<TelaCardapio> {
                           width: 10,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _atualizarItensCategoriaSelecionada('frango');
+                          },
                           child: Text(
                             'FRANGO',
                             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -143,7 +203,9 @@ class _TelaCardapioState extends State<TelaCardapio> {
                           width: 10,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _atualizarItensCategoriaSelecionada('combo');
+                          },
                           child: Text(
                             'COMBOS',
                             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -156,7 +218,9 @@ class _TelaCardapioState extends State<TelaCardapio> {
                           width: 10,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _atualizarItensCategoriaSelecionada('bebida');
+                          },
                           child: Text(
                             'BEBIDAS',
                             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -187,11 +251,12 @@ class _TelaCardapioState extends State<TelaCardapio> {
                 mainAxisSpacing: 20,
               ),
               itemBuilder: (context, index) {
-                if (index < _itens.length) {
+                if (index < _itensCategoriaSelecionada.length) {
                   // Verifica se o índice é válido antes de retornar o LancheCard
                   return LancheCard(
-                    _itens[index],
-                    onTap: () => _navegarParaVisualizar(context, _itens[index]),
+                    _itensCategoriaSelecionada[index],
+                    onTap: () => _navegarParaVisualizar(
+                        context, _itensCategoriaSelecionada[index]),
                   );
                 } else {
                   return null;
