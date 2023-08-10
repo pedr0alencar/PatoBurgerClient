@@ -67,7 +67,7 @@ class _VerContatoState extends State<VerContato> {
         children: [
           Positioned(
             child: Text(
-              'Alterar Contato',
+              'Contato',
               style: TextStyle(
                   fontFamily: 'Roboto',
                   color: Colors.white,
@@ -75,7 +75,7 @@ class _VerContatoState extends State<VerContato> {
                   fontSize: 24),
             ),
             top: 32,
-            left: 130,
+            left: 154,
           ),
           Positioned(
               top: 80,

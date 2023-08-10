@@ -8,6 +8,8 @@ class Constantes {
   static const Color CorTexto1 = Color(0xFFFFB54B);
   static const Color CorBorda = Color(0XFF747474);
   static const Color CorTitulo2 = Color(0xFF434343);
+  static const Color corNomeLanche = Color(0xFF434343);
+  static const Color CorCardItem = Color(0xFFFFCB82);
 
   //textos
 

@@ -57,6 +57,7 @@ flutter:
 
   assets:
     - lib/assets/recursos/
+    - 'lib/assets/recursos/hamburger.png'
 
 
   fonts:

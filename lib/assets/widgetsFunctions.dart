@@ -183,6 +183,26 @@ Widget butaoAdm(
                         );
 }*/
 
+// TITULOS DA TELA INICIAL OK
+Widget tituloPreto(String titulo) {
+  return Text(titulo,
+      style: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: 24,
+          fontWeight: FontWeight.w900,
+          color: Color(0xFF434343)));
+}
+
+Widget tituloLaranja(String titulo) {
+  return Text(titulo,
+      style: TextStyle(
+          fontFamily: Constantes.fonteRoboto,
+          fontSize: 24,
+          fontWeight: FontWeight.w900,
+          color: Constantes.corFundo));
+}
+
+// ---------------------------------------------------------------------------------------
 Widget campoEditarItem(BuildContext context, controller, String texto) {
   return Container(
     width: MediaQuery.of(context).size.width,
@@ -190,5 +210,68 @@ Widget campoEditarItem(BuildContext context, controller, String texto) {
       padding: EdgeInsets.only(top: 0, left: 1, right: 1),
       child: Text(texto),
     ),
+  );
+}
+
+Widget CardPromocao(String nome, String preco, String prctg) {
+  return Stack(
+    children: [
+      Container(
+        width: 200,
+        height: 90,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment(-0.5, -0.68),
+              child: Text(
+                nome,
+                style: TextStyle(
+                    color: Constantes.corNomeLanche,
+                    fontWeight: FontWeight.w700),
+              ),
+            ),
+            Align(
+              alignment: Alignment(-0.74, -0.1),
+              child: Text(
+                prctg,
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
+              ),
+            ),
+            Align(
+              alignment: Alignment(-0.058, -0.11),
+              child: Text('de Desconto'),
+            ),
+            Align(
+              alignment: Alignment(-0.74, 0.4),
+              child: Text(
+                'R\$',
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+              ),
+            ),
+            Align(
+                alignment: Alignment(-0.38, 0.54),
+                child: Text(
+                  preco,
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF434343)),
+                ))
+          ],
+        ),
+      ),
+    ],
   );
 }

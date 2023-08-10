@@ -21,11 +21,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Color minhaCor = const Color(0xFFFF9B0D);
-    return MaterialApp(
-        title: "PatoBurguer",
-        //home: TelaInicial(),
-        home: TelaCardapio()
-        //home: VerContato()
-        );
+    return MaterialApp(title: "PatoBurguer", home: TelaInicial());
+    //home: TelaCardapio());
+    //home: VerContato());
   }
 }
