@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'assets/constantes.dart';
 import 'assets/widgetsFunctions.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TelaInicial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Constantes.corFundo,
-      body: Stack(
+      body: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height - 60,
+            height: MediaQuery.of(context).size.height - 70,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
@@ -178,6 +179,103 @@ class TelaInicial extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 2,
+          ),
+          Positioned(
+            top: 650,
+            left: 40,
+            child: Container(
+              height: 68,
+              width: 300,
+              child: Row(
+                children: [
+                  /*Image.asset('lib/assets/recursos/botao-de-inicio.png'),*/
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 6,
+                      ),
+                      SvgPicture.asset(
+                        'lib/assets/recursos/noun_Home_3804013.svg',
+                        width: 40,
+                        height: 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        height: 3.5,
+                      ),
+                      Text(
+                        'Home',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 0.4,
+                      ),
+                      SvgPicture.asset(
+                        'lib/assets/recursos/noun_Hamburger_2077474.svg',
+                        width: 50,
+                        height: 50,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        'Lanches',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 4,
+                      ),
+                      SvgPicture.asset(
+                        'lib/assets/recursos/noun_Drink_3815069.svg',
+                        width: 50,
+                        height: 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        height: 5.7,
+                      ),
+                      Text(
+                        'Bebidas',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(width: 35),
+                  Column(
+                    children: [
+                      SvgPicture.asset(
+                        'lib/assets/recursos/noun_hamburgercombo_958560.svg',
+                        width: 30,
+                        height: 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        height: 8.8,
+                      ),
+                      Text(
+                        'Combos',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
