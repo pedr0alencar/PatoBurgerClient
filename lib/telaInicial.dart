@@ -96,28 +96,85 @@ class TelaInicial extends StatelessWidget {
                     )),
 
                 Positioned(
-                    top: 420,
-                    left: 56,
-                    child: Row(
-                      children: [
-                        Container(
-                          color: Colors.white,
-                          width: 126,
-                          height: 138,
-                          child: Stack(children: [
-                            Image.asset('lib/assets/recursos/hamburger.png')
-                          ]),
-                        ),
-                        SizedBox(
-                          width: 40,
-                        ),
-                        Container(
-                          color: Colors.white,
-                          width: 126,
-                          height: 138,
+                  top: 420,
+                  left: 56,
+                  child: Container(
+                    width: 126,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // Posição da sombra (x, y)
                         ),
                       ],
-                    ))
+                    ),
+                    child: Stack(children: [
+                      Align(
+                        alignment: Alignment(0, -0.8),
+                        child: Image.asset(
+                          'lib/assets/recursos/hamburguer.png',
+                          height: 100,
+                          width: 400,
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment(0, 0.7),
+                        child: Text(
+                          'Cardápio',
+                          style: TextStyle(
+                              fontSize: 20, color: Constantes.corFundo),
+                        ),
+                      )
+                    ]),
+                  ),
+                ),
+
+                Positioned(
+                  top: 420,
+                  left: 230,
+                  child: Container(
+                    width: 126,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // Posição da sombra (x, y)
+                        ),
+                      ],
+                    ),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: -40,
+                          left: -56,
+                          child: Image.asset(
+                            'lib/assets/recursos/telefone.png',
+                            height: 210,
+                            width: 240,
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment(0, 0.7),
+                          child: Text(
+                            'Contato',
+                            style: TextStyle(
+                                fontSize: 20, color: Constantes.corFundo),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
