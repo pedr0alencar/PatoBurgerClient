@@ -240,10 +240,11 @@ class TelaInicial extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TelaCardapio()),
-                          );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TelaCardapio(
+                                        opcao1: 'carne',
+                                      )));
                         },
                         child: SvgPicture.asset(
                           'lib/assets/recursos/noun_Hamburger_2077474.svg',
@@ -268,7 +269,14 @@ class TelaInicial extends StatelessWidget {
                         height: 4,
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TelaCardapio(
+                                        opcao1: 'bebida',
+                                      )));
+                        },
                         child: SvgPicture.asset(
                           'lib/assets/recursos/noun_Drink_3815069.svg',
                           width: 50,
@@ -285,11 +293,18 @@ class TelaInicial extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(width: 34.5),
+                  SizedBox(width: 34),
                   Column(
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TelaCardapio(
+                                        opcao1: 'combo',
+                                      )));
+                        },
                         child: SvgPicture.asset(
                           'lib/assets/recursos/noun_hamburgercombo_958560.svg',
                           width: 30,

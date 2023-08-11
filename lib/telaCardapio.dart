@@ -14,6 +14,10 @@ void main() async {
 }
 
 class TelaCardapio extends StatefulWidget {
+  final String? opcao1;
+
+  TelaCardapio({this.opcao1});
+
   @override
   State<TelaCardapio> createState() => _TelaCardapioState();
 }
@@ -26,7 +30,15 @@ class _TelaCardapioState extends State<TelaCardapio> {
   List<ItemCardapio> _itensBebidas = [];
   List<ItemCardapio> _itensCombos = [];
   List<ItemCardapio> _itensPm = [];
-  String opcao = 'carne';
+  //String opcao = 'carne';
+  String opcao = 'promocao';
+
+  void atualizarOpcao(String novaOpcao) {
+    setState(() {
+      opcao = novaOpcao;
+      _atualizarItensCategoriaSelecionada(opcao);
+    });
+  }
 
   void _navegarParaVisualizar(BuildContext context, ItemCardapio item) {
     Navigator.push(
@@ -43,7 +55,12 @@ class _TelaCardapioState extends State<TelaCardapio> {
   void initState() {
     super.initState();
     _carregaDoFirebase();
-    _atualizarItensCategoriaSelecionada(opcao);
+    if (widget.opcao1 != null) {
+      opcao = widget.opcao1!;
+      _atualizarItensCategoriaSelecionada(opcao);
+    } else {
+      _atualizarItensCategoriaSelecionada(opcao);
+    }
   }
 
   void SeparaLista(
@@ -124,6 +141,7 @@ class _TelaCardapioState extends State<TelaCardapio> {
             _itens; // Caso nenhuma categoria seja selecionada
       }
     });
+    print("Valor da opcao: $opcao");
   }
 
   Widget build(BuildContext context) {
