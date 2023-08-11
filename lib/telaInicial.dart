@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pato_burguer_client/VerContato.dart';
+import 'package:pato_burguer_client/telaCardapio.dart';
 import 'assets/constantes.dart';
 import 'assets/widgetsFunctions.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -97,85 +99,100 @@ class TelaInicial extends StatelessWidget {
                     )),
 
                 Positioned(
-                  top: 420,
-                  left: 56,
-                  child: Container(
-                    width: 126,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3), // Posição da sombra (x, y)
+                    top: 420,
+                    left: 56,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TelaCardapio()),
+                        );
+                      },
+                      child: Container(
+                        width: 126,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: Offset(0, 3), // Posição da sombra (x, y)
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Stack(children: [
-                      Align(
-                        alignment: Alignment(0, -0.8),
-                        child: Image.asset(
-                          'lib/assets/recursos/hamburguer.png',
-                          height: 100,
-                          width: 400,
-                        ),
+                        child: Stack(children: [
+                          Align(
+                            alignment: Alignment(0, -0.8),
+                            child: Image.asset(
+                              'lib/assets/recursos/hamburguer.png',
+                              height: 100,
+                              width: 400,
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment(0, 0.7),
+                            child: Text(
+                              'Cardápio',
+                              style: TextStyle(
+                                  fontSize: 20, color: Constantes.corFundo),
+                            ),
+                          )
+                        ]),
                       ),
-                      Align(
-                        alignment: Alignment(0, 0.7),
-                        child: Text(
-                          'Cardápio',
-                          style: TextStyle(
-                              fontSize: 20, color: Constantes.corFundo),
-                        ),
-                      )
-                    ]),
-                  ),
-                ),
+                    )),
 
                 Positioned(
-                  top: 420,
-                  left: 230,
-                  child: Container(
-                    width: 126,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3), // Posição da sombra (x, y)
+                    top: 420,
+                    left: 230,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => VerContato()),
+                        );
+                      },
+                      child: Container(
+                        width: 126,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: Offset(0, 3), // Posição da sombra (x, y)
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          top: -40,
-                          left: -56,
-                          child: Image.asset(
-                            'lib/assets/recursos/telefone.png',
-                            height: 210,
-                            width: 240,
-                          ),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              top: -40,
+                              left: -56,
+                              child: Image.asset(
+                                'lib/assets/recursos/telefone.png',
+                                height: 210,
+                                width: 240,
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment(0, 0.7),
+                              child: Text(
+                                'Contato',
+                                style: TextStyle(
+                                    fontSize: 20, color: Constantes.corFundo),
+                              ),
+                            )
+                          ],
                         ),
-                        Align(
-                          alignment: Alignment(0, 0.7),
-                          child: Text(
-                            'Contato',
-                            style: TextStyle(
-                                fontSize: 20, color: Constantes.corFundo),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                )
+                      ),
+                    ))
               ],
             ),
           ),
@@ -212,18 +229,28 @@ class TelaInicial extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    width: 35,
+                    width: 34.5,
                   ),
+                  // ------------ botão de lanche ------------------------------------------
                   Column(
                     children: [
                       SizedBox(
                         height: 0.4,
                       ),
-                      SvgPicture.asset(
-                        'lib/assets/recursos/noun_Hamburger_2077474.svg',
-                        width: 50,
-                        height: 50,
-                        color: Colors.white,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TelaCardapio()),
+                          );
+                        },
+                        child: SvgPicture.asset(
+                          'lib/assets/recursos/noun_Hamburger_2077474.svg',
+                          width: 50,
+                          height: 50,
+                          color: Colors.white,
+                        ),
                       ),
                       Text(
                         'Lanches',
@@ -232,18 +259,22 @@ class TelaInicial extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    width: 35,
+                    width: 34.5,
                   ),
+                  // ---- Botão de bebidas -------------------------------------------
                   Column(
                     children: [
                       SizedBox(
                         height: 4,
                       ),
-                      SvgPicture.asset(
-                        'lib/assets/recursos/noun_Drink_3815069.svg',
-                        width: 50,
-                        height: 40,
-                        color: Colors.white,
+                      GestureDetector(
+                        onTap: () {},
+                        child: SvgPicture.asset(
+                          'lib/assets/recursos/noun_Drink_3815069.svg',
+                          width: 50,
+                          height: 40,
+                          color: Colors.white,
+                        ),
                       ),
                       SizedBox(
                         height: 5.7,
@@ -254,14 +285,17 @@ class TelaInicial extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(width: 35),
+                  SizedBox(width: 34.5),
                   Column(
                     children: [
-                      SvgPicture.asset(
-                        'lib/assets/recursos/noun_hamburgercombo_958560.svg',
-                        width: 30,
-                        height: 40,
-                        color: Colors.white,
+                      GestureDetector(
+                        onTap: () {},
+                        child: SvgPicture.asset(
+                          'lib/assets/recursos/noun_hamburgercombo_958560.svg',
+                          width: 30,
+                          height: 40,
+                          color: Colors.white,
+                        ),
                       ),
                       SizedBox(
                         height: 8.8,
